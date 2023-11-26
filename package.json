@@ -6,12 +6,9 @@
   "scripts": {
     "develop": "nodemon index.js",
     "start": "node index.js"
-    
-    
   },
   "repository": {
     "type": "module"
-    
   },
   "author": "",
   "license": "ISC",
@@ -19,14 +16,10 @@
     "url": "https://github.com/browk876/kbwebservice/issues"
   },
   "homepage": "https://github.com/browk876/kbwebservice#readme",
-  "dependencies": {
-    "express": "^4.18.2"
-  },
   "devDependencies": {
     "axios": "^1.6.2",
     "express": "^4.18.2",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.0.1"
-
   }
 }
