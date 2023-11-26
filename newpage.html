@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400&display=swap">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe0f0;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        #funFactContainer {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #fffacd;
+            border-radius: 10px;
+            background-color: #fffacd;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="funFactContainer">
+        <h1>Fun Fact:</h1>
+        <p id="funFactText"></p>
+    </div>
+
+    <script>
+        async function getFunFact() {
+            try {
+                // Useless Facts API URL
+                const apiUrl = "https://useless-facts.sameerkumar.website/api";
+
+                // Fetch data from the Useless Facts API
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                // Extract the fun fact from the data
+                const funFact = data.data;
+
+                // Update content on the page with the fun fact
+                document.getElementById("funFactText").textContent = funFact;
+            } catch (error) {
+                console.error("Error fetching fun fact:", error);
+                document.getElementById("funFactText").textContent = "Error fetching fun fact..";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", getFunFact);
+    </script>
+
+</body>
+</html>

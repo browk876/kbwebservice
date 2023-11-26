@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400&display=swap">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe0f0;
+            font-family: 'Lexend', sans-serif; 
+            position: relative;
+        }
+
+        button {
+            padding: 20px 40px; 
+            font-size: 32px; 
+            background-color: #fffacd; 
+            border: 2px solid #ffe0f0; 
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #fff8dc; 
+        }
+
+        .flower {
+            position: absolute;
+            font-size: 24px; 
+            color: #ffd700; 
+        }
+
+        .flower1 { top: 50px; left: 50px; }
+        .flower2 { top: 100px; right: 50px; }
+        .flower3 { bottom: 50px; left: 50px; }
+        .flower4 { bottom: 100px; right: 50px; }
+        .flower5 { top: 150px; left: 150px; }
+        .flower6 { top: 200px; right: 150px; }
+        .flower7 { bottom: 150px; left: 150px; }
+        .flower8 { bottom: 200px; right: 150px; }
+        .flower9 { top: 250px; left: 250px; }
+        .flower10 { top: 300px; right: 250px; }
+        .flower11 { bottom: 250px; left: 250px; }
+        .flower12 { bottom: 300px; right: 250px; }
+        .flower13 { top: 350px; left: 350px; }
+        .flower14 { top: 400px; right: 350px; }
+        .flower15 { bottom: 350px; left: 350px; }
+        .flower16 { bottom: 400px; right: 350px; }
+    </style>
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <button id="funFactButton">Click for a Fun Fact</button>
+
+
+    <div class="flower flower1">🌼</div>
+    <div class="flower flower2">🌼</div>
+    <div class="flower flower3">🌼</div>
+    <div class="flower flower4">🌼</div>
+    <div class="flower flower5">🌼</div>
+    <div class="flower flower6">🌼</div>
+    <div class="flower flower7">🌼</div>
+    <div class="flower flower8">🌼</div>
+    <div class="flower flower9">🌼</div>
+    <div class="flower flower10">🌼</div>
+    <div class="flower flower11">🌼</div>
+    <div class="flower flower12">🌼</div>
+    <div class="flower flower13">🌼</div>
+    <div class="flower flower14">🌼</div>
+    <div class="flower flower15">🌼</div>
+    <div class="flower flower16">🌼</div>
+
+   
+   
+    <script>
+        function redirectToNewPage() {
+         
+            window.location.href = 'newpage.html';
+        }
+
+   
+        document.getElementById("funFactButton").addEventListener("click", redirectToNewPage);
+    </script>
+
+
+</body>
+</html>
