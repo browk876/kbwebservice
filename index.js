@@ -21,22 +21,26 @@ app.use(express.static(path.join(__dirname, 'public')));
 // });
 
 // Set up a response for the root path of the application
-app.get('/', async (req, res) => {
-  try {
-    // Useless Facts API URL
-    const apiUrl = "https://useless-facts.sameerkumar.website/api";
+// app.get('/', async (req, res) => {
+//   try {
+//     // Useless Facts API URL
+//     const apiUrl = "https://useless-facts.sameerkumar.website/api";
 
-    // Fetch data from the Useless Facts API
-    const response = await axios.get(apiUrl);
-    const funFact = response.data.data;
+//     // Fetch data from the Useless Facts API
+//     const response = await axios.get(apiUrl);
+//     const funFact = response.data.data;
 
-    // Send the fetched fun fact as a response
-    res.send(`Fun Fact: ${funFact}`);
-  } catch (error) {
-    console.error("Error fetching fun fact:", error);
-    res.status(500).send("Error fetching fun fact");
-  }
-});
+//     // Send the fetched fun fact as a response
+//     res.send(`Fun Fact: ${funFact}`);
+//   } catch (error) {
+//     console.error("Error fetching fun fact:", error);
+//     res.status(500).send("Error fetching fun fact");
+//   }
+// });
+
+server.get('/*', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+})
 
 // Set the application to listen on a port
 app.listen(port, () => {
