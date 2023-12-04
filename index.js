@@ -38,7 +38,7 @@ app.get('/', async (req, res) => {
   }
 });
 
-// Set the application to listen on a port
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
-});
+// // Set the application to listen on a port
+// app.listen(port, () => {
+//     console.log(`Example app listening on port ${port}`);
+// });
