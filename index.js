@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   }
 // });
 
-server.get('/*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 })
 
