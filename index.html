@@ -28,6 +28,15 @@
         button:hover {
             background-color: #fff8dc; 
         }
+        #funFactContainer {
+            text-align: bottom;
+            padding: 20px;
+            border: 2px solid #fffacd;
+            border-radius: 10px;
+            background-color: #fffacd;
+            position: absolute;
+            bottom: 0;
+        }
 
         .flower {
             position: absolute;
@@ -56,8 +65,11 @@
 </head>
 <body>
 
-    <button id="funFactButton">Click for a Fun Fact</button>
+    <button id="funFactButton" onclick="updateFact()">Click for a Fun Fact</button>
 
+    <div id="funFactContainer">
+        <p id="funFactText"></p>
+    </div>
 
     <div class="flower flower1">🌼</div>
     <div class="flower flower2">🌼</div>
@@ -79,13 +91,35 @@
    
    
     <script>
-        function redirectToNewPage() {
-         
-            window.location.href = 'newpage.html';
+       
+        async function getFunFact() {
+            try {
+                // Useless Facts API URL
+                const apiUrl = "https://useless-facts.sameerkumar.website/api";
+
+                // Fetch data from the Useless Facts API
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                // Extract the fun fact from the data
+                const funFact = data.data;
+
+                // Update content on the page with the fun fact
+                document.getElementById("funFactText").textContent = funFact;
+            } catch (error) {
+                console.error("Error fetching fun fact:", error);
+                document.getElementById("funFactText").textContent = "Error fetching fun fact..";
+            }
         }
 
-   
-        document.getElementById("funFactButton").addEventListener("click", redirectToNewPage);
+
+        function updateFact() {
+            getFunFact();
+            // window.location.href = 'newpage.html';
+        }
+        // document.addEventListener("DOMContentLoaded", getFunFact);
+
+        // document.getElementById("funFactButton").addEventListener("DOMContentLoaded", getFunFact);
     </script>
 
 
