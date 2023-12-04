@@ -37,6 +37,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 //     res.status(500).send("Error fetching fun fact");
 //   }
 // });
+app.get('/newpage', (req, res) => {
+  res.sendFile(__dirname + '/newpage.html');
+})
 
 app.get('/*', (req, res) => {
   res.sendFile(__dirname + '/index.html');
@@ -44,5 +47,5 @@ app.get('/*', (req, res) => {
 
 // Set the application to listen on a port
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`Wskb app listening on port ${port}`);
 });
