@@ -16,9 +16,9 @@ const port = process.env.PORT || 5500;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server listening on port ${port}`);
+// });
 
 // Set up a response for the root path of the application
 app.get('/', async (req, res) => {
@@ -38,7 +38,7 @@ app.get('/', async (req, res) => {
   }
 });
 
-// // Set the application to listen on a port
-// app.listen(port, () => {
-//     console.log(`Example app listening on port ${port}`);
-// });
+// Set the application to listen on a port
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+});
